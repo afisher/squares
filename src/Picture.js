@@ -19,32 +19,22 @@ class Picture extends Component {
              colorStep,
              index,
              color
-         } = this.props,
-         {context} = this;
+        } = this.props,
+        {context} = this;
 
-         if (!context) {
-             return;
+        if (!context) {
+            return;
+        }
+
+        var z = random(0, 255);
+        for (var y = 0; y < height; y += indexStep) {
+            for (var x = 0; x < width; x += indexStep) {
+                z = z + random(-1 * colorStep, colorStep);
+                color[index] = z;
+                context.fillStyle = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+                context.fillRect(x, y, indexStep, indexStep);
+            }
          }
-
-         var drawPixel = function (x, y, z) {
-             if (x >= width) {
-                 y += indexStep;
-                 x = 0;
-             }
-             if (y >= height) {
-                 return;
-             }
-
-             var newZ = z + random(-1 * colorStep, colorStep);
-             drawPixel(x + indexStep, y, newZ);
-
-             color[index] = newZ;
-             context.beginPath();
-             context.fillStyle = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-             context.fillRect(x, y, indexStep, indexStep);
-         };
-
-         drawPixel(0, 0, random(0, 255));
     }
 
     render () {

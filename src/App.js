@@ -11,7 +11,7 @@ class App extends Component {
                 width: 200,
                 height: 200,
                 indexStep: 20,
-                colorStep: 15,
+                colorStep: 30,
                 index: random(0, 2),
                 color: this.makeColors()
         };
