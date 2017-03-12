@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Picture from './Picture';
+import Configurator from './Configurator';
 import random from './random';
 
 
@@ -14,7 +15,11 @@ class App extends Component {
                 index: random(0, 2),
                 color: this.makeColors()
         };
-        this.onClick = () => { this.changeColors() };
+    }
+
+    generate (configState) {
+        this.setState(configState);
+        this.changeColors();
     }
 
     makeColors () {
@@ -40,6 +45,8 @@ class App extends Component {
          } = this.state;
          return (
             <div className="App">
+                <Configurator onSubmit={(s) => this.generate(s)}/>
+
                 <Picture width={width}
                          height={height}
                          indexStep={indexStep}
@@ -47,10 +54,6 @@ class App extends Component {
                          index={index}
                          color={color}
                 />
-
-                <button onClick={this.onClick}>
-                    Again!
-                </button>
             </div>
         );
     }
