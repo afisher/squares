@@ -5,13 +5,14 @@ class Configurator extends Component {
     constructor () {
         super();
         this.state = {
-            width: 200,
+            width: 600,
             height: 200,
+            indexStep: 20
         };
     }
 
     // HAHAHA eat shit
-    changeState (key, value) { this.setState({[key]: value}); }
+    changeState (key, value) { this.setState({[key]: Number(value)}); }
 
     render () {
         return (
@@ -21,6 +22,7 @@ class Configurator extends Component {
                     <input type="number"
                            min="0"
                            step="1"
+                           value={this.state.width}
                            onChange={(event) =>
                                this.changeState('width', event.target.value)}
                      />
@@ -31,8 +33,20 @@ class Configurator extends Component {
                     <input type="number"
                            min="0"
                            step="1"
+                           value={this.state.height}
                            onChange={(event) =>
                                this.changeState('height', event.target.value)}
+                    />
+                </label>
+
+                <label>
+                    square size
+                    <input type="number"
+                           min="0"
+                           step="1"
+                           value={this.state.indexStep}
+                           onChange={(event) =>
+                               this.changeState('indexStep', event.target.value)}
                     />
                 </label>
 

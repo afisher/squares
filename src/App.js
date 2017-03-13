@@ -8,10 +8,10 @@ class App extends Component {
     constructor () {
         super();
         this.state = {
-                width: 200,
+                width: 600,
                 height: 200,
                 indexStep: 20,
-                colorStep: 30,
+                colorStep: 15,
                 index: random(0, 2),
                 color: this.makeColors()
         };

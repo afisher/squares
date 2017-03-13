@@ -26,11 +26,24 @@ class Picture extends Component {
             return;
         }
 
-        var z = random(0, 255);
+        var z = color[index];
+
         for (var y = 0; y < height; y += indexStep) {
             for (var x = 0; x < width; x += indexStep) {
-                z = z + random(-1 * colorStep, colorStep);
+
+                if (random(0, 2) === 1) {
+                    color[0] += random(-1 * colorStep, colorStep);
+                }
+                if (random(0, 2) === 1) {
+                    color[1] += random(-1 * colorStep, colorStep);
+                }
+                if (random(0, 2) === 1) {
+                    color[2] += random(-1 * colorStep, colorStep);
+                }
+
+                z += random(-1 * colorStep, colorStep);
                 color[index] = z;
+
                 context.fillStyle = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
                 context.fillRect(x, y, indexStep, indexStep);
             }
