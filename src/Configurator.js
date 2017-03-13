@@ -7,7 +7,8 @@ class Configurator extends Component {
         this.state = {
             width: 600,
             height: 200,
-            indexStep: 20
+            indexStep: 20,
+            colorStep: 15
         };
     }
 
@@ -17,6 +18,7 @@ class Configurator extends Component {
     render () {
         return (
             <div id="configurator">
+            <div id="configurator-size">
                 <label>
                     width
                     <input type="number"
@@ -38,7 +40,9 @@ class Configurator extends Component {
                                this.changeState('height', event.target.value)}
                     />
                 </label>
+            </div>
 
+            <div id="configurator-squares">
                 <label>
                     square size
                     <input type="number"
@@ -50,9 +54,21 @@ class Configurator extends Component {
                     />
                 </label>
 
+                <label>
+                    color variation
+                    <input type="number"
+                           min="0"
+                           step="1"
+                           value={this.state.colorStep}
+                           onChange={(event) =>
+                               this.changeState('colorStep', event.target.value)}
+                    />
+                </label>
+
                 <button onClick={() => this.props.onSubmit(this.state)}>
                     Again!
                 </button>
+            </div>
             </div>
         )
     }
