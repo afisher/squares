@@ -18,7 +18,7 @@ class Configurator extends Component {
     render () {
         return (
             <div id="configurator">
-            <div id="configurator-size">
+            <div>
                 <label>
                     width
                     <input type="number"
@@ -29,7 +29,8 @@ class Configurator extends Component {
                                this.changeState('width', event.target.value)}
                      />
                 </label>
-
+            </div>
+            <div>
                 <label>
                     height
                     <input type="number"
@@ -41,8 +42,7 @@ class Configurator extends Component {
                     />
                 </label>
             </div>
-
-            <div id="configurator-squares">
+            <div>
                 <label>
                     square size
                     <input type="number"
@@ -53,7 +53,8 @@ class Configurator extends Component {
                                this.changeState('indexStep', event.target.value)}
                     />
                 </label>
-
+            </div>
+            <div>
                 <label>
                     color variation
                     <input type="number"
