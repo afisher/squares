@@ -13,16 +13,20 @@ class App extends Component {
                 indexStep: 20,
                 colorStep: 15,
                 index: random(0, 2),
-                color: this.makeColors()
+                color: this.makeColors(),
+                firstColor: null
         };
     }
 
     generate (configState) {
-        this.setState(configState);
-        this.changeColors();
+        // setState is async, WOW
+        this.setState(configState, () => this.changeColors());
     }
 
     makeColors () {
+        if (this.state && this.state.firstColor) {
+            return this.state.firstColor;
+        }
         return [
             random(0, 255), // red
             random(0, 255), // green

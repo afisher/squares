@@ -8,12 +8,24 @@ class Configurator extends Component {
             width: 600,
             height: 200,
             indexStep: 20,
-            colorStep: 15
+            colorStep: 15,
+            firstColor: null
         };
     }
 
     // HAHAHA eat shit
-    changeState (key, value) { this.setState({[key]: Number(value)}); }
+    changeState (key, value) { this.setState({[key]: value}); }
+
+    changeColor (value) {
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(value);
+        var color = result ? [
+            parseInt(result[1], 16),
+            parseInt(result[2], 16),
+            parseInt(result[3], 16)
+        ] : null;
+
+        this.changeState('firstColor', color);
+    }
 
     render () {
         return (
@@ -26,7 +38,7 @@ class Configurator extends Component {
                            step="1"
                            value={this.state.width}
                            onChange={(event) =>
-                               this.changeState('width', event.target.value)}
+                               this.changeState('width', Number(event.target.value))}
                      />
                 </label>
             </div>
@@ -38,7 +50,7 @@ class Configurator extends Component {
                            step="1"
                            value={this.state.height}
                            onChange={(event) =>
-                               this.changeState('height', event.target.value)}
+                               this.changeState('height', Number(event.target.value))}
                     />
                 </label>
             </div>
@@ -50,7 +62,17 @@ class Configurator extends Component {
                            step="1"
                            value={this.state.indexStep}
                            onChange={(event) =>
-                               this.changeState('indexStep', event.target.value)}
+                               this.changeState('indexStep', Number(event.target.value))}
+                    />
+                </label>
+            </div>
+            <div>
+                <label>
+                    starting color
+                    <input type="text"
+                           value={this.state.colorStart}
+                           onChange={(event) =>
+                               this.changeColor(event.target.value)}
                     />
                 </label>
             </div>
@@ -62,7 +84,7 @@ class Configurator extends Component {
                            step="1"
                            value={this.state.colorStep}
                            onChange={(event) =>
-                               this.changeState('colorStep', event.target.value)}
+                               this.changeState('colorStep', Number(event.target.value))}
                     />
                 </label>
 
