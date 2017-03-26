@@ -9,7 +9,8 @@ class Configurator extends Component {
             height: 200,
             indexStep: 20,
             colorStep: 15,
-            firstColor: null
+            firstColor: null,
+            error: false
         };
     }
 
@@ -17,6 +18,9 @@ class Configurator extends Component {
     changeState (key, value) { this.setState({[key]: value}); }
 
     changeColor (value) {
+        var error = !/^#?[a-fA-F\d]{6}/.test(value) && value;
+        this.setState({error: error});
+
         var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(value);
         var color = result ? [
             parseInt(result[1], 16),

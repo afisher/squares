@@ -17,12 +17,13 @@ class Picture extends Component {
              height,
              indexStep,
              colorStep,
-             index
+             index,
+             error
         } = this.props,
         {context} = this,
         color = this.props.color.slice(0);
 
-        if (!context) {
+        if (!context || error) {
             return;
         }
 

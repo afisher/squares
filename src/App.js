@@ -14,13 +14,18 @@ class App extends Component {
                 colorStep: 15,
                 index: random(0, 2),
                 color: this.makeColors(),
-                firstColor: null
+                firstColor: null,
+                error: false
         };
     }
 
     generate (configState) {
-        // setState is async, WOW
-        this.setState(configState, () => this.changeColors());
+        this.setState({error: configState.error});
+
+        if (!configState.error) {
+            // setState is async, WOW
+            this.setState(configState, () => this.changeColors());
+        }
     }
 
     makeColors () {
@@ -45,11 +50,16 @@ class App extends Component {
              indexStep,
              colorStep,
              index,
-             color
+             color,
+             error
          } = this.state;
+         let message = error ? 'Color must be a valid hex code or blank' : null;
          return (
             <div className="App">
                 <Configurator onSubmit={(s) => this.generate(s)}/>
+                <div className="error">
+                    {message}
+                </div>
 
                 <Picture width={width}
                          height={height}
@@ -57,6 +67,7 @@ class App extends Component {
                          colorStep={colorStep}
                          index={index}
                          color={color}
+                         error={error}
                 />
             </div>
         );

@@ -22,8 +22,8 @@ button {
     cursor: pointer;
 }
 
-div {
-    align: center;
+.error {
+    color: red;
 }
 
 canvas {
