@@ -57,11 +57,13 @@ class Picture extends Component {
         const {width, height} = this.props;
 
         return (
-            <canvas id="photo"
-                    width={width}
-                    height={height}
-                    ref={this.ref}>
-            </canvas>
+            <div className="pa3">            
+                <canvas id="photo"
+                        width={width}
+                        height={height}
+                        ref={this.ref}>
+                </canvas>
+            </div>
         );
     }
 }

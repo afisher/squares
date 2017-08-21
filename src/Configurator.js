@@ -33,65 +33,81 @@ class Configurator extends Component {
 
     render () {
         return (
-            <div id="configurator">
-            <div>
-                <label>
+            <div id="configurator" className="mw5">
+            <div className="pa3">
+                <div className="fl w-40">
                     width
-                    <input type="number"
-                           min="0"
-                           step="1"
-                           value={this.state.width}
-                           onChange={(event) =>
-                               this.changeState('width', Number(event.target.value))}
-                     />
-                </label>
+                </div>
+                <div className="fl w-60">
+                    <input className="fl w-100 tr"
+                            type="number"
+                            min="0"
+                            step="1"
+                            value={this.state.width}
+                            onChange={(event) =>
+                                this.changeState('width', Number(event.target.value))}
+                        />
+                </div>
             </div>
-            <div>
-                <label>
+            <div className="pa3">
+                <div className="fl w-40">
                     height
-                    <input type="number"
+                </div>
+                <div className="fl w-60">
+                    <input className="fl w-100 tr"
+                           type="number"
                            min="0"
                            step="1"
                            value={this.state.height}
                            onChange={(event) =>
                                this.changeState('height', Number(event.target.value))}
                     />
-                </label>
+                </div>
             </div>
-            <div>
-                <label>
+            <div className="pa3">
+                <div className="fl w-40">
                     square size
-                    <input type="number"
+                </div>
+                <div className="fl w-60">
+                    <input className="fl w-100 tr"
+                           type="number"
                            min="0"
                            step="1"
                            value={this.state.indexStep}
                            onChange={(event) =>
                                this.changeState('indexStep', Number(event.target.value))}
                     />
-                </label>
+                </div>
             </div>
-            <div>
-                <label>
+            <div className="pa3">
+                <div className="fl w-40">
                     starting color
-                    <input type="text"
+                </div>
+                <div className="fl w-60">
+                    <input className="fl w-100 tr"
+                           type="text"
                            value={this.state.colorStart}
                            onChange={(event) =>
                                this.changeColor(event.target.value)}
                     />
-                </label>
+                </div>
             </div>
-            <div>
-                <label>
-                    color variation
-                    <input type="number"
+            <div className="pa3">
+                <div className="fl w-40">
+                    variation
+                </div>
+                <div className="fl w-60">
+                    <input className="fl w-100 tr"
+                           type="number"
                            min="0"
                            step="1"
                            value={this.state.colorStep}
                            onChange={(event) =>
                                this.changeState('colorStep', Number(event.target.value))}
                     />
-                </label>
-
+                </div>
+            </div>
+            <div className="pa3">
                 <button onClick={() => this.props.onSubmit(this.state)}>
                     Again!
                 </button>
