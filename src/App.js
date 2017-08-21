@@ -55,7 +55,7 @@ class App extends Component {
          } = this.state;
          let message = error ? 'Color must be a valid hex code or blank' : null;
          return (
-            <div className="App sans-serif f3">
+            <div className="App sans-serif f4 b moon-gray">
                 <Configurator onSubmit={(s) => this.generate(s)}/>
                 <div className="error">
                     {message}

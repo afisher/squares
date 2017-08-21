@@ -35,11 +35,11 @@ class Configurator extends Component {
         return (
             <div id="configurator" className="mw6">
             <div className="pa3 ma2">
-                <div className="fl w-40">
+                <div className="fl w-30">
                     width
                 </div>
-                <div className="fl w-60">
-                    <input className="fl w-100 tr"
+                <div className="fl w-30">
+                    <input className="code fl w-100 tr bg-near-black near-white b--white-30 ba"
                             type="number"
                             min="0"
                             step="1"
@@ -50,11 +50,11 @@ class Configurator extends Component {
                 </div>
             </div>
             <div className="pa3 ma2">
-                <div className="fl w-40">
+                <div className="fl w-30">
                     height
                 </div>
-                <div className="fl w-60">
-                    <input className="fl w-100 tr"
+                <div className="fl w-30">
+                    <input className="code fl w-100 tr bg-near-black near-white b--white-30 ba"
                            type="number"
                            min="0"
                            step="1"
@@ -65,11 +65,11 @@ class Configurator extends Component {
                 </div>
             </div>
             <div className="pa3 ma2">
-                <div className="fl w-40">
+                <div className="fl w-30">
                     square size
                 </div>
-                <div className="fl w-60">
-                    <input className="fl w-100 tr"
+                <div className="fl w-30">
+                    <input className="code fl w-100 tr bg-near-black near-white b--white-30 ba"
                            type="number"
                            min="0"
                            step="1"
@@ -80,11 +80,11 @@ class Configurator extends Component {
                 </div>
             </div>
             <div className="pa3 ma2">
-                <div className="fl w-40">
+                <div className="fl w-30">
                     start color
                 </div>
-                <div className="fl w-60">
-                    <input className="fl w-100 tr"
+                <div className="fl w-30">
+                    <input className="code pr3 fl w-100 tr bg-near-black near-white b--white-30 ba"
                            type="text"
                            value={this.state.colorStart}
                            onChange={(event) =>
@@ -93,11 +93,11 @@ class Configurator extends Component {
                 </div>
             </div>
             <div className="pa3 ma2">
-                <div className="fl w-40">
+                <div className="fl w-30">
                     variation
                 </div>
-                <div className="fl w-60">
-                    <input className="fl w-100 tr"
+                <div className="fl w-30">
+                    <input className="code fl w-100 tr bg-near-black near-white b--white-30 ba"
                            type="number"
                            min="0"
                            step="1"
@@ -107,8 +107,8 @@ class Configurator extends Component {
                     />
                 </div>
             </div>
-            <div className="pa3 ma2 tr">
-                <button className="bn bg-green white br2 ttu b pv2 ph3" onClick={() => this.props.onSubmit(this.state)}>
+            <div className="pa3 mt4 ma2 tr w-60">
+                <button className="w-100 bn bg-green white br2 ttu b pv2 ph3" onClick={() => this.props.onSubmit(this.state)}>
                     Again!
                 </button>
             </div>
