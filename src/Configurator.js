@@ -35,7 +35,7 @@ class Configurator extends Component {
         return (
             <div id="configurator" className="mw6">
             <div className="pa3 ma2">
-                <div className="fl w-30">
+                <div className="fl w-40">
                     width
                 </div>
                 <div className="fl w-30">
@@ -50,7 +50,7 @@ class Configurator extends Component {
                 </div>
             </div>
             <div className="pa3 ma2">
-                <div className="fl w-30">
+                <div className="fl w-40">
                     height
                 </div>
                 <div className="fl w-30">
@@ -65,7 +65,7 @@ class Configurator extends Component {
                 </div>
             </div>
             <div className="pa3 ma2">
-                <div className="fl w-30">
+                <div className="fl w-40">
                     square size
                 </div>
                 <div className="fl w-30">
@@ -80,7 +80,7 @@ class Configurator extends Component {
                 </div>
             </div>
             <div className="pa3 ma2">
-                <div className="fl w-30">
+                <div className="fl w-40">
                     start color
                 </div>
                 <div className="fl w-30">
@@ -93,7 +93,7 @@ class Configurator extends Component {
                 </div>
             </div>
             <div className="pa3 ma2">
-                <div className="fl w-30">
+                <div className="fl w-40">
                     variation
                 </div>
                 <div className="fl w-30">
@@ -107,7 +107,7 @@ class Configurator extends Component {
                     />
                 </div>
             </div>
-            <div className="pa3 mt4 ma2 tr w-60">
+            <div className="pa3 mt4 ma2 tr w-70">
                 <button className="w-100 bn bg-green white br2 ttu b pv2 ph3" onClick={() => this.props.onSubmit(this.state)}>
                     Again!
                 </button>
