@@ -33,8 +33,8 @@ class Configurator extends Component {
 
     render () {
         return (
-            <div id="configurator" className="mw5">
-            <div className="pa3">
+            <div id="configurator" className="mw6">
+            <div className="pa3 ma2">
                 <div className="fl w-40">
                     width
                 </div>
@@ -49,7 +49,7 @@ class Configurator extends Component {
                         />
                 </div>
             </div>
-            <div className="pa3">
+            <div className="pa3 ma2">
                 <div className="fl w-40">
                     height
                 </div>
@@ -64,7 +64,7 @@ class Configurator extends Component {
                     />
                 </div>
             </div>
-            <div className="pa3">
+            <div className="pa3 ma2">
                 <div className="fl w-40">
                     square size
                 </div>
@@ -79,9 +79,9 @@ class Configurator extends Component {
                     />
                 </div>
             </div>
-            <div className="pa3">
+            <div className="pa3 ma2">
                 <div className="fl w-40">
-                    starting color
+                    start color
                 </div>
                 <div className="fl w-60">
                     <input className="fl w-100 tr"
@@ -92,7 +92,7 @@ class Configurator extends Component {
                     />
                 </div>
             </div>
-            <div className="pa3">
+            <div className="pa3 ma2">
                 <div className="fl w-40">
                     variation
                 </div>
@@ -107,8 +107,8 @@ class Configurator extends Component {
                     />
                 </div>
             </div>
-            <div className="pa3">
-                <button onClick={() => this.props.onSubmit(this.state)}>
+            <div className="pa3 ma2 tr">
+                <button className="bn bg-green white br2 ttu b pv2 ph3" onClick={() => this.props.onSubmit(this.state)}>
                     Again!
                 </button>
             </div>
